@@ -1,0 +1,49 @@
+HOME PAGE - index.html 
+
+
+
+list all products (with link) -> product_show/<int:id> 
+create new product <button> -> Takes to product_form.html  
+
+Product model 
+name,  desc, price, link
+
+product_create/ 
+creates new Product 
+take the show page for the new product 
+
+show_product/
+new product creates form page 
+form has name, desc, price 
+
+product_show/<int:id>/
+get product 
+show product 
+get reviews 
+show reviews 
+create review for product <--- link to /edit AND  /delete   <button> 
+
+review_edit/ 
+get review 
+update review
+show_review
+
+
+product_show/<int:id>/edit
+get product 
+update product 
+return to product_show/<int:id>/
+
+product_show/<int:id>/delete
+product.delete() 
+
+
+MODELS
+
+Product
+name,  desc, price_in_cents
+
+Review
+datetime, text 
+
+
