@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+Edit {{review_edit_form.text}}
+{% endblock %}
+
+{% block content %}
+<form action="{{action}}" method='POST'> 
+    {% csrf_token %} 
+    {{review_edit_form}}
+    <div> 
+        <input type="submit" name="submit" value="submit"> 
+   </div> 
+</form> 
+
+{% endblock %}

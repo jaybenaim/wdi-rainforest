@@ -10,14 +10,15 @@
     <h1>{{product.name}}</h1> 
     <p> {{product.description}}</p> 
     <span>${{product.price}}</span>
-</div> 
+</div>
 <ul> 
     <h2> Reviews: </h2> 
     {% for review in reviews  %}
-        <li> {{review}}<span> <a href="{% url 'delete_review' review.pk %}">X</a></span> </li> 
+        <li> {{review.text}} - {{review.date}} ( <a href="{% url 'edit_review' review.pk %}"> Edit</a> | <a href="{% url 'delete_review' review.pk %}">X</a>) </li> 
     {% endfor %}
-    <form action='{{action}}' method="POST"> 
+    <form action='{{ action }}' method="POST"> 
         {% csrf_token %}
+        <input type='hidden' name='product' value="{{ product.id }}" > 
         {{review_form.as_p}}
         <input type="submit" name="submit" value="Submit"> 
     </form>

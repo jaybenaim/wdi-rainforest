@@ -6,8 +6,8 @@ Home
 {% block nav %}
     <a href='/product/new'> New Product </a>
 {% endblock %}
-{% block content %}
 
+{% block content %}
 <h1> Products </h1> 
 {% for product in products %}
     <a href="/product/{{ product.id }}/show">

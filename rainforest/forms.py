@@ -12,4 +12,5 @@ class ReviewForm(ModelForm):
     class Meta: 
         model = Review 
         fields = ['text', 'product']
+        # widgets = {'product': forms.HiddenInput()}
         
