@@ -6,15 +6,22 @@
 {% block content %}
 
 <div> 
+
     <h1>{{product.name}}</h1> 
-    <p> {{product.desc}}</p> 
+    <p> {{product.description}}</p> 
     <span>${{product.price}}</span>
 </div> 
 <ul> 
     <h2> Reviews: </h2> 
     {% for review in reviews  %}
-        <li> {{review}} </li> 
+        <li> {{review}}<span> <a href="{% url 'delete_review' review.pk %}">X</a></span> </li> 
     {% endfor %}
+    <form action='{{action}}' method="POST"> 
+        {% csrf_token %}
+        {{review_form.as_p}}
+        <input type="submit" name="submit" value="Submit"> 
+    </form>
+
 </ul> 
 
 {% endblock %} 

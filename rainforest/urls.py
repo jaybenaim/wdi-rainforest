@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from rainforest.views import * 
 
+
 urlpatterns = [
     path('', root), 
     path('admin/', admin.site.urls),
     path('home/', home, name='home'), 
-    path('product/<int:id>/show', product_show),
-    
-    
-
+    path('product/<int:id>/show', product_show, name='product_show'),
+    path('product/new', product_new, name='product_form'),
+    path('product/create', product_create, name='product_create'), 
+    path('review/create', review_create, name='review_create'), 
+    path('review/<int:id>/delete', delete_review, name='delete_review'), 
 ]

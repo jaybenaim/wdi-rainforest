@@ -1,7 +1,10 @@
-h1 { color: red; 
-}
 
 
 body {
     background-color: rgb(228, 201, 243);
+}
+.product-form { 
+    display: block; 
+    width: 100%; 
+    text-align: center; 
 }
