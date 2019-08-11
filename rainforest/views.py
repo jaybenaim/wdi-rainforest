@@ -21,7 +21,7 @@ def home(request):
 
 def product_show(request, id):
     product_id = Product.objects.get(pk=id)
-    review = Review.objects.filter(product=product_id)
+    review = Review.objects.filter(product=product_id).order_by('date')
     form = ReviewForm() 
     
 
