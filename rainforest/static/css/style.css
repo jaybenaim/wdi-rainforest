@@ -8,3 +8,10 @@ body {
     width: 100%; 
     text-align: center; 
 }
+.product-index { 
+    display: flex; 
+    justify-content: center; 
+}
+.product-index a { 
+    text-decoration: none; 
+}

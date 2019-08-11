@@ -25,11 +25,12 @@ urlpatterns = [
     path('product/<int:id>/show', product_show, name='product_show'),
     path('product/new', product_new, name='product_form'),
     path('product/create', product_create, name='product_create'), 
+    path('product/<int:id>/edit', edit_product, name='edit_product'), 
+    path('product/<int:id>/delete', delete_product, name='delete_product'),
     path('review/create', review_create, name='review_create'), 
     path('review/<int:id>/delete', delete_review, name='delete_review'), 
     path('review/<int:id>/edit', edit_review, name='edit_review'),
     path('review/<int:id>/update', update_review, name='update_review'),
-
 ]
 
 

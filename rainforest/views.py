@@ -49,6 +49,21 @@ def product_create(request):
     
     return HttpResponseRedirect('/')
 
+def edit_product(request, id):
+    product = Product.objects.get(pk=id)
+    if request.method == 'GET': 
+        form = ProductForm(instance=product)
+        context = { 'form': form, 'product': product }
+        return render(request, 'edit_product.html', context)
+    elif request.method == 'POST': 
+        form = ProductForm(instance=product)
+        updated_product = form.save() 
+        return redirect(reverse('show_product', args=[product.id]))
+
+def delete_product(request, id): 
+    product = Product.objects.get(pk=id)
+    product.delete() 
+    return redirect('/')
 
 def review_create(request): 
     review = ReviewForm(request.POST)

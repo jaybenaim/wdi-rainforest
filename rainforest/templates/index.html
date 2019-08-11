@@ -8,12 +8,14 @@ Home
 {% endblock %}
 
 {% block content %}
-<h1> Products </h1> 
+<h1>Products</h1> 
 {% for product in products %}
-    <a href="/product/{{ product.id }}/show">
-        <h2> {{product.name}} </h2> 
-    </a>
-
+    <div class='product-index'> 
+        <a href="/product/{{ product.id }}/show">
+        <h2>{{product.name}}</h2> 
+        <p>{{product.description}}  - <span> $ {{product.price }}</span></p> 
+        </a>
+    </div> 
 {% endfor %}
 
 

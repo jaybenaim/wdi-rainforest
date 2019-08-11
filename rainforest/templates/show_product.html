@@ -10,6 +10,11 @@
     <h1>{{product.name}}</h1> 
     <p> {{product.description}}</p> 
     <span>${{product.price}}</span>
+    <div class='edit-delete-product'> 
+        <a href="{% url 'edit_product' product.id %}">Edit product</a> 
+        <a href="{% url 'delete_product' product.id %}">Delete product</a> 
+
+    </div> 
 </div>
 <ul> 
     <h2> Reviews: </h2> 
